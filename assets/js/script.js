@@ -625,128 +625,128 @@
 
 
 
-    /*------------------------------------------
-        = GOOGLE MAP
-    -------------------------------------------*/  
-    function map() {
+    // /*------------------------------------------
+    //     = GOOGLE MAP
+    // -------------------------------------------*/  
+    // function map() {
 
-        var locations = [
-            ['313, Tricity Plaza, Sector 20, Sanauli, Punjab 134117', 22.8103888, 89.5619609,1],
-            // ['City inn khulna', 22.820884, 89.551216,2],
-        ];
+    //     var locations = [
+    //         ['313, Tricity Plaza, Sector 20, Sanauli, Punjab 134117', 22.8103888, 89.5619609,1],
+    //         // ['City inn khulna', 22.820884, 89.551216,2],
+    //     ];
 
-        var map = new google.maps.Map(document.getElementById('map'), {
-            center: new google.maps.LatLng( 22.8103888, 89.5619609),
-            zoom: 12,
-            scrollwheel: false,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
+    //     var map = new google.maps.Map(document.getElementById('map'), {
+    //         center: new google.maps.LatLng( 22.8103888, 89.5619609),
+    //         zoom: 12,
+    //         scrollwheel: false,
+    //         mapTypeId: google.maps.MapTypeId.ROADMAP
 
-        });
+    //     });
 
-        var infowindow = new google.maps.InfoWindow();
+    //     var infowindow = new google.maps.InfoWindow();
 
-        var marker, i;
+    //     var marker, i;
 
-        for (i = 0; i < locations.length; i++) {  
-                marker = new google.maps.Marker({
-                position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-                map: map,
-                icon:'assets/images/map-marker.png'
-            });
+    //     for (i = 0; i < locations.length; i++) {  
+    //             marker = new google.maps.Marker({
+    //             position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+    //             map: map,
+    //             icon:'assets/images/map-marker.png'
+    //         });
 
-            google.maps.event.addListener(marker, 'click', (function(marker, i) {
-                return function() {
-                    infowindow.setContent(locations[i][0]);
-                    infowindow.open(map, marker);
-                }
-            })(marker, i));
-        }
+    //         google.maps.event.addListener(marker, 'click', (function(marker, i) {
+    //             return function() {
+    //                 infowindow.setContent(locations[i][0]);
+    //                 infowindow.open(map, marker);
+    //             }
+    //         })(marker, i));
+    //     }
 
-        map.set('styles',
+    //     map.set('styles',
 
-            [
-                {
-                    "featureType": "administrative",
-                    "elementType": "labels.text.fill",
-                    "stylers": [
-                        {
-                            "color": "rgb(237, 64, 64)"
-                        }
-                    ]
-                },
-                {
-                    "featureType": "landscape",
-                    "elementType": "all",
-                    "stylers": [
-                        {
-                            "color": "#f2f2f2"
-                        }
-                    ]
-                },
-                {
-                    "featureType": "poi",
-                    "elementType": "all",
-                    "stylers": [
-                        {
-                            "visibility": "off"
-                        }
-                    ]
-                },
-                {
-                    "featureType": "road",
-                    "elementType": "all",
-                    "stylers": [
-                        {
-                            "saturation": -100
-                        },
-                        {
-                            "lightness": 45
-                        }
-                    ]
-                },
-                {
-                    "featureType": "road.highway",
-                    "elementType": "all",
-                    "stylers": [
-                        {
-                            "visibility": "simplified"
-                        }
-                    ]
-                },
-                {
-                    "featureType": "road.arterial",
-                    "elementType": "labels.icon",
-                    "stylers": [
-                        {
-                            "visibility": "off"
-                        }
-                    ]
-                },
-                {
-                    "featureType": "transit",
-                    "elementType": "all",
-                    "stylers": [
-                        {
-                            "visibility": "off"
-                        }
-                    ]
-                },
-                {
-                    "featureType": "water",
-                    "elementType": "all",
-                    "stylers": [
-                        {
-                            "color": "rgb(237, 64, 64)"
-                        },
-                        {
-                            "visibility": "on"
-                        }
-                    ]
-                }
-            ]
-        );
+    //         [
+    //             {
+    //                 "featureType": "administrative",
+    //                 "elementType": "labels.text.fill",
+    //                 "stylers": [
+    //                     {
+    //                         "color": "rgb(237, 64, 64)"
+    //                     }
+    //                 ]
+    //             },
+    //             {
+    //                 "featureType": "landscape",
+    //                 "elementType": "all",
+    //                 "stylers": [
+    //                     {
+    //                         "color": "#f2f2f2"
+    //                     }
+    //                 ]
+    //             },
+    //             {
+    //                 "featureType": "poi",
+    //                 "elementType": "all",
+    //                 "stylers": [
+    //                     {
+    //                         "visibility": "off"
+    //                     }
+    //                 ]
+    //             },
+    //             {
+    //                 "featureType": "road",
+    //                 "elementType": "all",
+    //                 "stylers": [
+    //                     {
+    //                         "saturation": -100
+    //                     },
+    //                     {
+    //                         "lightness": 45
+    //                     }
+    //                 ]
+    //             },
+    //             {
+    //                 "featureType": "road.highway",
+    //                 "elementType": "all",
+    //                 "stylers": [
+    //                     {
+    //                         "visibility": "simplified"
+    //                     }
+    //                 ]
+    //             },
+    //             {
+    //                 "featureType": "road.arterial",
+    //                 "elementType": "labels.icon",
+    //                 "stylers": [
+    //                     {
+    //                         "visibility": "off"
+    //                     }
+    //                 ]
+    //             },
+    //             {
+    //                 "featureType": "transit",
+    //                 "elementType": "all",
+    //                 "stylers": [
+    //                     {
+    //                         "visibility": "off"
+    //                     }
+    //                 ]
+    //             },
+    //             {
+    //                 "featureType": "water",
+    //                 "elementType": "all",
+    //                 "stylers": [
+    //                     {
+    //                         "color": "rgb(237, 64, 64)"
+    //                     },
+    //                     {
+    //                         "visibility": "on"
+    //                     }
+    //                 ]
+    //             }
+    //         ]
+    //     );
 
-    }; 
+    // }; 
 
 
     /*------------------------------------------
