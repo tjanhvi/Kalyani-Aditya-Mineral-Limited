@@ -163,46 +163,83 @@
                       </div>
                   </div>
               </div> <!-- end row -->
-              <div class="row">
-                  <div class="col col-xs-12">
-                      <form class="contact-form form contact-validation-active row" id="contact-form-s2">
-                          <div class="col col-sm-6">
-                              <label for="f-name">First Name</label>
-                              <input type="text" class="form-control" id="f-name" name="f_name">
-                          </div>
-                          <div class="col col-sm-6">
-                              <label for="l-name">Last Name</label>
-                              <input type="text" class="form-control" id="l-name" name="l_name">
-                          </div>
-                          <div class="col col-sm-6">
-                              <label for="email">Email</label>
-                              <input type="email" class="form-control" id="email" name="email">
-                          </div>
-                          <div class="col col-sm-6">
-                              <label for="phone">Phone No</label>
-                              <input type="text" class="form-control" id="phone" name="phone">
-                          </div>
-                          <div class="col col-sm-12">
-                              <label for="message">Message</label>
-                              <textarea class="form-control" id="message" name="note"></textarea>
-                          </div>
-                          <div class="col col-sm-12 submit-btn">
-                              <button class="theme-btn">Submit</button>
-                              <div id="loader">
-                                  <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i>
-                              </div>
-                          </div>
-                          <div class="error-handling-messages">
-                              <div id="success">Thank you</div>
-                              <div id="error"> Error occurred while sending email. Please try again later. </div>
-                          </div>
-                      </form>
-                  </div>
-              </div>
+              
           </div> <!-- end container -->
       </section>
       <!-- end contact-pg-section -->
 
+
+
+      <style>
+        .container1 {
+          max-width: 400px;
+          margin: 0 auto;
+          padding: 20px;
+          border: 1px solid #ccc;
+        }
+    
+        .form-group {
+          margin-bottom: 20px;
+        }
+    
+        .form-group label {
+          display: block;
+          margin-bottom: 5px;
+        }
+    
+        .form-group input {
+          width: 100%;
+          padding: 5px;
+        }
+    
+        .submit-btn {
+          display: block;
+          width: 100%;
+          padding: 10px;
+          background-color: rgb(174, 47, 47);
+          color: white;
+          text-align: center;
+          text-decoration: none;
+          border: none;
+          cursor: pointer;
+        }
+      </style>
+    
+      <div class="container1">
+        <h2>Contact Us</h2>
+        <form onsubmit="event.preventDefault(); sendWhatsAppMessage();">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+      </div>
+
+      <script>
+        function sendWhatsAppMessage() {
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var message = document.getElementById('message').value;
+        
+            var formattedMessage = 'Name: ' + name + '\n'
+                                  + 'Email: ' + email + '\n'
+                                  + 'Message: ' + message;
+        
+            var url = 'https://wa.me/916280013579?text=' + encodeURIComponent(formattedMessage);
+        
+            // Redirect to WhatsApp
+            window.open(url, '_blank');
+        }
+      </script>
 
         <!-- start site-footer -->
         <footer class="site-footer">

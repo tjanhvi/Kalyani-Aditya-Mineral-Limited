@@ -827,7 +827,7 @@
                                 </div>
                                 <div>
                                     <label>Business Type</label>
-                                    <select name="select">
+                                    <select name="select" id="business-type">
                                         <option selected disabled> -- Select One -- </option>
                                         <option value="Select One">Select One</option>
                                         <option value="Select Two">Select Two</option>
@@ -835,15 +835,15 @@
                                     </select>
                                 </div>
                                 <div class="submit-btn-wrap">
-                                    <input value="Submit" class="theme-btn wpcf7-submit" type="submit">
-                                    <div id="loader">
+                                    <input onclick="sendWhatsAppMessage();" value="Submit" class="theme-btn wpcf7-submit" type="submit">
+                                    <!-- <div id="loader">
                                         <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i>
-                                    </div>
+                                    </div> -->
                                 </div>
-                                <div class="error-handling-messages">
+                                <!-- <div class="error-handling-messages">
                                     <div id="success">Thank you</div>
                                     <div id="error"> Error occurred while sending email. Please try again later. </div>
-                                </div>
+                                </div> -->
                             </form>
                         </div>                     
                     </div>
@@ -854,6 +854,28 @@
             </div>
         </section>
         <!-- end contact-section -->
+
+        <script>
+            function sendWhatsAppMessage() {
+              var name = document.getElementById('name').value;
+              var email = document.getElementById('email').value;
+              var phone = document.getElementById('phone').value;
+              var businessType = document.getElementById('business-type').value;
+          
+              // Format the message with the form details
+              var formattedMessage = 'Name: ' + name + '\n' +
+                                     'Email: ' + email + '\n' +
+                                     'Phone Number: ' + phone + '\n' +
+                                     'Business Type: ' + businessType;
+          
+              // Construct the WhatsApp URL with the formatted message
+              var url = 'https://wa.me/916280013579?text=' + encodeURIComponent(formattedMessage);
+          
+              // Redirect to WhatsApp
+              window.open(url, '_blank');
+            }
+          </script>
+          
 
 
         <!-- news-section -->
