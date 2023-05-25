@@ -1076,7 +1076,7 @@ img {
 }
 
 .theme-accordion-s1 .panel-heading a {
-  background-color: rgba(253, 212, 51, 0.95);
+  background-color: #e12727;
   font-size: 18px;
   font-size: 1.2rem;
   font-weight: 600;
@@ -4967,7 +4967,7 @@ img {
 }
 
 .contact-form-s1 .wpcf7-submit:hover {
-  background-color: #d4a900;
+  background-color: #e12727;
 }
 
 .contact-women {
